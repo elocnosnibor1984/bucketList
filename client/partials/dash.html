@@ -1,0 +1,41 @@
+<h4>Bucket List  | <a href="#/dash">Home</a>  | <button ng-click="logout()">Log out</button></h4> 
+
+<h1>Welcome, {{user}}!</h1>
+
+<form>
+	<input type="text" name="title" placeholder="Title" ng-model="item.title">
+	<input type="text" name="description" placeholder="Description" ng-model="item.description">
+	<select ng-options="n.name for n in names" ng-model="item.friend">
+		<!-- <object>Cole</object> -->
+	</select>
+	<input type="submit" name="submit" value="Add to List" ng-click="add()">
+</form>
+
+<h3>Before I die I want to ...</h3>
+<table>
+
+	<tbody>
+		<tr ng-repeat="i in items">
+		<td>
+		<div ng-if="i.done == true">
+			<input type="checkbox" name="" ng-click="done(i._id)" checked>
+		</div>
+		<div ng-if="i.done != true">
+			<input type="checkbox" name="" ng-click="done(i._id)">
+		</div>
+		</td>
+		<td>{{i.friend}}</td>
+		<td>| </td>
+		<td>{{i.title}}</td>
+		<td>-</td>
+		<td>{{i.description}}</td>
+		<td>-</td>
+		<td>{{i.createdAt | date:"MMMM dd yyyy"}}</td>
+		<td>{{i.done}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>List of other users (Click to view profile):</p>
+<!-- {{names}} -->
+<p ng-repeat="n in names"><a href="#/show/{{n.name}}">{{n.name}}</a></p>

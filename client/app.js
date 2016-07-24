@@ -14,5 +14,20 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 				controller: 'indexController',
 				templateUrl: "partials/index.html"
 			})
+			.when('/dash', 
+			{
+				controller: 'dashController',
+				templateUrl: "partials/dash.html"
+			})
+			.when('/show/:name', 
+			{
+				controller: 'showController',
+				templateUrl: "partials/show.html"
+			})
+			.when('/create', 
+			{
+				controller: 'createController',
+				templateUrl: "partials/create.html"
+			})
 	})
 }());

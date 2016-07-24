@@ -23,16 +23,16 @@ myApp.factory('dummyFactory', function($http){
 	// I use this as an initial test that I can pass information to my backend.
 	// Check out your server console and you should see the body and the value we pass through 
 	// the url. 
-	factory.addDummy = function(info, callback){
-		$http.post('/dummies/youShouldSeeThisInServerConsoleReqParams', info).then(function(data){
-			if(data.error){
-				callback(data);
-			} else {
-				mongooses.push(data)
-				callback(mongooses);
-			}
-		})
-	}
+	// factory.addDummy = function(info, callback){
+	// 	$http.post('/dummies/youShouldSeeThisInServerConsoleReqParams', info).then(function(data){
+	// 		if(data.error){
+	// 			callback(data);
+	// 		} else {
+	// 			mongooses.push(data)
+	// 			callback(mongooses);
+	// 		}
+	// 	})
+	// }
 
 	return factory;
 })
